@@ -12,9 +12,9 @@
                 </div>
                 <div class="col-sm-2 form-group">
                     <label for="category">Category</label>
-                    <select id="category" name="category" class="form-control" ngModel required>
+                    <select id="category" name="category" class="form-control" ngModel required (ngModelChange)="onSelectedCategory($event)">
                         <option>--select--</option>
-                        <option *ngFor="let category of options"[value]="category" >{{category}}</option>
+                        <option *ngFor="let category of options" [value]="category">{{category}}</option>
                     </select>
                 </div>
                 <div class="col-sm-2 form-group">

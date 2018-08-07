@@ -58,6 +58,16 @@ export class ReceiptEditComponent implements OnInit , OnDestroy {
     form.reset();
   }
 
+  onSelectedCategory(val: string){
+    if(ProductCategory[val] === ProductCategory.Medical)
+      {
+        this.plForm.controls['taxRate'].setValue(20);
+      }
+      else{
+        this.plForm.controls['taxRate'].setValue(0);
+      }
+  }
+
   onClear(){
     this.plForm.reset();
     this.editMode = false;
